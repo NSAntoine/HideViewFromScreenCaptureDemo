@@ -8,7 +8,7 @@
 import UIKit
 
 class DemonstrationViewController: UIViewController {
-
+    
     var imageView: UIImageView!
     
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class DemonstrationViewController: UIViewController {
         
         // stack view to put the label and toggle side-by-side
         let stackView = UIStackView(arrangedSubviews: [label, toggle])
-		stackView.spacing = 3
+        stackView.spacing = 3
         view.addSubview(stackView)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -35,15 +35,15 @@ class DemonstrationViewController: UIViewController {
         imageView = UIImageView(image: .nature)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(imageView)
-		
-		/* ignore this label, it's just for demonstration purposes */
-		let noticeLabel = UILabel()
-		noticeLabel.text = "NOTICE: NO MATTER THE STATE OF THE TOGGLE\nTHE IMAGE WILL ALWAYS BE VISIBLE ON THE USER'S SCREEN"
-		noticeLabel.translatesAutoresizingMaskIntoConstraints = false
-		noticeLabel.numberOfLines = -1
-		noticeLabel.textColor = .secondaryLabel
-		noticeLabel.font = .italicSystemFont(ofSize: 12)
-		view.addSubview(noticeLabel)
+        
+        /* ignore this label, it's just for demonstration purposes */
+        let noticeLabel = UILabel()
+        noticeLabel.text = "NOTICE: NO MATTER THE STATE OF THE TOGGLE\nTHE IMAGE WILL ALWAYS BE VISIBLE ON THE USER'S SCREEN"
+        noticeLabel.translatesAutoresizingMaskIntoConstraints = false
+        noticeLabel.numberOfLines = -1
+        noticeLabel.textColor = .secondaryLabel
+        noticeLabel.font = .italicSystemFont(ofSize: 12)
+        view.addSubview(noticeLabel)
         
         NSLayoutConstraint.activate([
             // place stackView in center
@@ -56,13 +56,13 @@ class DemonstrationViewController: UIViewController {
             // place imageView below the stackView
             imageView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
             imageView.heightAnchor.constraint(equalToConstant: 300),
-			
-			// noticeLabel below imageView
-			noticeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-			noticeLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-			
-			noticeLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-			noticeLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            
+            // noticeLabel below imageView
+            noticeLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
+            noticeLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            
+            noticeLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            noticeLabel.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
         ])
     }
     
